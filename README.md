@@ -10,6 +10,26 @@ MCP-сервер, который оборачивает **unified Jobs API** kie
 - **Удалённо (Streamable HTTP)** — публичный HTTPS-эндпоинт для Claude Custom
   Connectors и для `claude mcp add --transport http`. Есть готовый адаптер под Vercel.
 
+## 🚀 Запуск в один клик
+
+Нажми кнопку — Vercel сам сделает копию репозитория тебе в GitHub, спросит
+API-ключ kie.ai и развернёт сервер. Ни форка, ни папок, ни настроек руками.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/safy/kea-mcp-server&env=KIE_API_KEY&envDescription=API-ключ%20kie.ai&envLink=https://kie.ai/api-key)
+
+1. Жми кнопку **Deploy**.
+2. Войди через GitHub (один клик), при желании поменяй имя проекта.
+3. В поле **`KIE_API_KEY`** вставь ключ с https://kie.ai/api-key.
+4. Жми **Deploy** и жди ~минуту.
+5. Готово. Проверь живость: открой `https://<твой-проект>.vercel.app/health` →
+   должно прийти `{"status":"ok"}`.
+
+URL для подключения к Claude: `https://<твой-проект>.vercel.app/mcp` (см. раздел
+«Подключение удалённого сервера» ниже).
+
+> Ручной путь (форк → импорт → переменные) описан ниже в разделе «Режим 2» — он
+> нужен, только если хочешь всё настроить вручную.
+
 ## Структура
 
 ```
